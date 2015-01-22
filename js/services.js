@@ -3,9 +3,9 @@
  */
 (function () {
 
-     var app =angular.module('anticipo.services', []);
+     angular.module('anticipo.services', [])
 
-        app.factory('anticipoService', ['$http', '$q', function ($http, $q) {
+        .factory('anticipoService', ['$http', '$q', function ($http, $q) {
 
             function all() {
                 var deferred = $q.defer();
