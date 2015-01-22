@@ -1,14 +1,11 @@
-(function () {
-    var app = angular.module('anticipo',[
-        'ngRoute',
-        'anticipo.controllers',
-        'anticipo.services'
-    ]);
+(function(){
+    var app = angular.module('anticipo',['ngRoute']);
 
-    app.config(['$routeProvider', function($routeProvider){
+    app.config(function($routeProvider){
         $routeProvider
             .when('/', {
-                templateUrl : 'views/anticipos-lista.html'
+                templateUrl : 'views/anticipos-lista.html',
+                controller: 'AnticipoController'
             })
             .when('/anticiposnew', {
                 templateUrl : 'views/anticipos-formnew.html'
@@ -18,8 +15,40 @@
             })
             .otherwise ({
             redirecTo: '/'
-            });
+        });
+    });
+    app.controller('AnticipoController', ['$scope', 'anticipoService', function ($scope, anticipoService) {
+        anticipoService.all().then(function (data) {
+            $scope.anticipos = data;
+        });
+
+    }])
+
+    app.factory('anticipoService', ['$http', '$q', function ($http, $q) {
+
+        function all() {
+            var deferred = $q.defer();
+
+            $http.get('/anticipos.json')
+                .success(function (data) {
+                    deferred.resolve(data);
+                });
+
+            return deferred.promise;
+        }
+        return {
+            all: all
+        };
+
     }]);
+
+
 })();
+
+
+
+
+
+
 
 
