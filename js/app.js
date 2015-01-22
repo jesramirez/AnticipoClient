@@ -1,6 +1,8 @@
 (function () {
     var app = angular.module('anticipo',[
-        'ngRoute'
+        'ngRoute',
+        'anticipo.controllers',
+        'anticipo.services'
     ]);
 
     app.config(['$routeProvider', function($routeProvider){
@@ -11,10 +13,12 @@
             .when('/anticiposnew', {
                 templateUrl : 'views/anticipos-formnew.html'
             })
+            .when('/anticipos/:id', {
+                templateUrl : 'views/anticipos-update.html'
+            })
             .otherwise ({
             redirecTo: '/'
-        });
-
+            });
     }]);
 })();
 

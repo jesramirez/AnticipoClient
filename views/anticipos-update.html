@@ -1,0 +1,86 @@
+<div>
+    <form class="form-horizontal" role="form" name="formulario_new">
+        <div class="form-group">
+            <label class="control-label col-xs-3">Proveedor:</label>
+            <div class="col-xs-3">
+                <input type="text" class="form-control" id="inputproveedor" placeholder="Nombre del Proveedor" name="proveedor" value="{{antCtrl.anticipo.proveedor}}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-3">Motivo del pago:</label>
+            <div class="col-xs-3">
+                <input type="text" class="form-control" id="inputmotivo" placeholder="Motivo del Pago" name="motivo"value="{{antCtrl.anticipo.motivo}}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-3">Compro:</label>
+            <div class="col-xs-3">
+                <select class="form-control" name="comprador" >
+                    <option>{{antCtrl.anticipo.comprador}}</option>
+                    <option>Guadalupe Quintana Flores</option>
+                    <option>Angelica Arana Colin</option>
+                    <option>Otro</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-3">Autorizo:</label>
+            <div class="col-xs-3">
+                <select class="form-control" name="autorizo">
+                    <<option>{{antCtrl.anticipo.autorizo}}</option>
+                    <option>Esperanza Zubiria Alanis</option>
+                    <option>Juan Enrique Vargas Garcia</option>
+                    <option>Manuel Ignacio Alanis Zubiria</option>
+                    <option>Martha Elva Alanis Zubiria</option>
+                    <option>Maria Angelica Alanis Zubiria</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-3">Cantidad de Anticipo:</label>
+
+            <div class="col-xs-3">
+                <input type="text" class="form-control" placeholder="$" name="cantidad" value="{{antCtrl.anticipo.cantidad}}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-3">Moneda:</label>
+            <div class="col-xs-3">
+                <select class="form-control" name="moneda">
+                    <<option>{{antCtrl.anticipo.moneda}}</option>
+                    <option>MXP</option>
+                    <option>USD</option>
+                    <option>EUR</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-xs-3">Requiere:</label>
+            <div class="col-xs-3">
+                <input type="text" class="form-control" placeholder="Nombre de quien Requiere el Anticipo" name="requerido" value="{{antCtrl.anticipo.requerido}}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-xs-3">Compra:</label>
+            <div class="col-xs-3">
+                <input type="text" class="form-control" placeholder="Numero de compra" name="compra" value="{{antCtrl.anticipo.compra}}">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-offset-3 col-xs-9">
+                <label class="checkbox-inline">
+                    <input type="checkbox" value="agree">  Cancelar.
+                </label>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <div class="col-xs-offset-3 col-xs-9">
+                <input type="submit" class="btn btn-primary" value="Enviar">
+                <input type="reset" class="btn btn-default" value="Limpiar">
+            </div>
+        </div>
+    </form>
+</div>
